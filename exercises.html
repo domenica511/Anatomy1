@@ -38,9 +38,10 @@
 
     function loadExercises() {
         const data = JSON.parse(localStorage.getItem('exercises') || '[]');
-
         const list = document.getElementById('exercisesList');
-        list.innerHTML = data.length ? data.map(ex => `<div class="exercise-item"><p class="mb-0">${ex}</p></div>`).join('');
+        list.innerHTML = data.length 
+            ? data.map(ex => `<div class="exercise-item"><p class="mb-0">${ex}</p></div>`).join('')
+            :'<p class="text-center text-muted">Вправ немає.</p>'
     }
 
     const themeToggle = document.getElementById('themeToggle');
@@ -60,4 +61,5 @@
 </body>
 
 </html>
+
 
