@@ -37,37 +37,7 @@
     AOS.init();
 
     function loadExercises() {
-        const data = [
-            `EXERCISE 1 — Comprehension Questions
-1. Why does Hazel Sinnett choose to study anatomy despite societal expectations for women in the 19th century?
-2. What factors motivate Jack Currer to help Hazel in her research?
-3. How does the novel portray the differences between social classes in Edinburgh?
-4. What role does death and mortality play in Hazel’s personal development?
-5. How does Hazel’s relationship with Jack challenge traditional gender and class norms?`,
-
-    `EXERCISE 2 — Vocabulary in Context
-Fill in the missing words based on the novel’s themes and events:
-1. Hazel’s fascination with medical science represents her desire for ________.
-2. Jack works as a resurrection man, illegally selling ________ to medical schools.
-3. The novel criticizes restrictive social ________ placed on women.
-4. Hazel’s research often puts her at risk, showing her ________ and determination.
-5. Jack’s life in the streets reveals the harsh realities of ________ in the 1800s.`,
-
-    `EXERCISE 3 — Character Analysis
-Write 4–5 sentences:
-1. Hazel Sinnett: What are her strongest qualities? How does she change throughout the story?
-2. Jack Currer: What internal conflicts does he face? How does his background shape his choices?
-3. Hazel & Jack: Why is their connection powerful despite social differences?`,
-
-    `EXERCISE 4 — Quote Interpretation
-Explain each quote and connect it to character/theme:
-1. “Love is not an exact science, but Hazel wished it were.”
-2. “A body tells the truth, even when a person will not.”
-3. “Freedom is a luxury only the wealthy can afford.”`,
-
-    `EXERCISE 5 — Creative Task
-Write a short gothic-style scene (8–10 sentences) where Hazel performs a medical procedure in her hidden laboratory — from Jack’s point of view. Include sensory details, emotions, fear, admiration, and a Victorian gothic mood.`
-];
+        const data = JSON.parse(localstorage.getItem('exercises') || '[]');
 
         const list = document.getElementById('exercisesList');
         list.innerHTML = data.length ? data.map(ex => `<div class="exercise-item"><p class="mb-0">${ex}</p></div>`).join('');
@@ -88,4 +58,5 @@ Write a short gothic-style scene (8–10 sentences) where Hazel performs a medic
     loadExercises();
 </script>
 </body>
+
 </html>
