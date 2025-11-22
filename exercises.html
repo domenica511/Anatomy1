@@ -37,7 +37,7 @@
     AOS.init();
 
     function loadExercises() {
-        const data = JSON.parse(localstorage.getItem('exercises') || '[]');
+        const data = JSON.parse(localStorage.getItem('exercises') || '[]');
 
         const list = document.getElementById('exercisesList');
         list.innerHTML = data.length ? data.map(ex => `<div class="exercise-item"><p class="mb-0">${ex}</p></div>`).join('');
@@ -60,3 +60,4 @@
 </body>
 
 </html>
+
